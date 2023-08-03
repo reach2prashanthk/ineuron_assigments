@@ -1,7 +1,11 @@
+
 from pymongo.mongo_client import MongoClient
-url = "mongodb+srv://prashaanth:1234@cluster0.aufa7mx.mongodb.net/?retryWrites=true&w=majority"
+
+uri = "mongodb+srv://prashanth:1234@prashanth.pynnq4g.mongodb.net/?retryWrites=true&w=majority"
+
 # Create a new client and connect to the server
-client = MongoClient(url)
+client = MongoClient(uri)
+
 # Send a ping to confirm a successful connection
 try:
     client.admin.command('ping')
@@ -9,10 +13,11 @@ try:
 except Exception as e:
     print(e)
 
-d={'name':'prashanth',
-   'email':'kp@gmail.com',
-   'surname':'pi'}
-
-db1=client['mongootest']
+d={
+    'name':'prashanth',
+    'email':'k@gmail.com',
+    'surname':'kp'
+}
+db1=client['mongotest']
 coll=db1['test']
 coll.insert_one(d)
